@@ -53,7 +53,7 @@ def add_donor():
         cur.execute(
             "INSERT INTO donor_details (donor_fname, donor_lname, donor_blood_type, donor_email, donor_donate_date) VALUES (%s,%s,%s,%s,%s)", (fname, lname, bType, email, date))
         conn.commit()
-        flash('Donation Added Successfully.  Thank you for Donating!!')
+        flash('Donation Added Successfully.  Thank you for donating!')
         return redirect(url_for('donate'))
 
 
