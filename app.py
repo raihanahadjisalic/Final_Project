@@ -69,7 +69,7 @@ def add_donor_admin():
         cur.execute(
             "INSERT INTO donor_details (donor_fname, donor_lname, donor_blood_type, donor_email, donor_donate_date) VALUES (%s,%s,%s,%s,%s)", (fname, lname, bType, email, date))
         conn.commit()
-        flash('Donor was added successfully')
+        flash('Donor added successfully')
 
         return redirect(url_for('Index'))
 
@@ -104,7 +104,7 @@ def update_student(donor_id):
                 donor_donate_date = %s
             WHERE donor_id = %s
         """, (fname, lname, bType, email, date,  donor_id))
-        flash('Donor Information Updated Successfully')
+        flash('Donor information Updated Successfully')
         conn.commit()
         return redirect(url_for('Index'))
 
