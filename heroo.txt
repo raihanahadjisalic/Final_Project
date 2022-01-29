@@ -1,0 +1,1 @@
+alter sequence donor_details_donor_id_seq restart with 1;

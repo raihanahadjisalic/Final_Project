@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Blood Donation</title>
+  </head>
+  <body>
+    <div id="hero">
+      <div class="navbar">
+        <img src="../static/imgs/bloodLogo.png" alt="" class="logo" />
+        <!-- <a href="/index" class="exploreBtn" id="explore">Explore</a> -->
+      </div>
+      <div class="container">
+        <div class="info">
+          <h1>SHARE A LIFE</h1>
+          <p>The blood you donate gives someone another chance at life.</p>
+          <a href="donate.html" class="exploreBtn" id="explore">Be a Donor now</a>
+        </div>
+      </div>
+      <div class="sliders">
+        <img src="../static/imgs/left-arrow.png" id="prev" />
+        <div class="preview">
+          <img
+            src="../static/imgs/bg2.jpg"
+            alt=""
+            class="active thumbnail"
+            id="bg2"
+          />
+          <img src="../static/imgs/bg3.jpg" alt="" class="thumbnail" />
+          <img src="../static/imgs/bg1.jpg" alt="" class="thumbnail" />
+        </div>
+        <img src="../static/imgs/right-arrow.png" id="next" />
+      </div>
+    </div>
+    <!-- About Us Section -->
+    <div class="body2">
+      <div class="about-section">
+        <div class="inner-container">
+          <h1>About Us</h1>
+          <p class="text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+            totam unde dolorem eos aliquam, rem dignissimos impedit ea cum Lorem
+            ipsum dolor, sit amet consectetur adipisicing elit. In,
+            reprehenderit!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-body">
+      <div class="contact-container">
+        <h1>Connect with Us</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque,
+          doloremque! Ex sed deleniti saepe nihil quaerat ratione numquam
+          laboriosam iste.
+        </p>
+        <div class="contact-box">
+          <div class="contact-left">
+            <h3>Send your request</h3>
+            <div class="input-row">
+              <div class="input-group">
+                <label for="">Name</label>
+                <input type="text" placeholder="Juan Dela Cruz" />
+              </div>
+              <div class="input-group">
+                <label for="">Phone</label>
+                <input type="text" placeholder="09123456789" />
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-group">
+                <label for="">Email</label>
+                <input type="email" placeholder="juandelacruz@gmail.com" />
+              </div>
+              <div class="input-group">
+                <label for="">Subject</label>
+                <input type="text" placeholder="Appointment" />
+              </div>
+            </div>
+            <label for="">Message</label>
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button type="submit">SEND</button>
+          </div>
+
+          <div class="contact-right">
+            <h3>Reach Us</h3>
+            <table>
+              <tr>
+                <td>Email</td>
+                <td>donateblood@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Phone</td>
+                <td>0912 234 5678</td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td>Lorem ipsum dolor sit amet consectetur.</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var theBg = document.getElementById("hero");
+      var prevBtn = document.getElementById("prev");
+      var nextBtn = document.getElementById("next");
+      var thumbnail = document.getElementsByClassName("thumbnail");
+
+      var bgImgs = new Array(
+        "../static/imgs/bg2.jpg",
+        "../static/imgs/bg3.jpg",
+        "../static/imgs/bg1.jpg"
+      );
+      let i = 0;
+      nextBtn.onclick = function () {
+        if (i < 2) {
+          theBg.style.backgroundImage = 'url("' + bgImgs[i + 1] + '")';
+          thumbnail[i + 1].classList.add("active");
+          thumbnail[i].classList.remove("active");
+          i++;
+        }
+      };
+      prevBtn.onclick = function () {
+        if (i > 0) {
+          theBg.style.backgroundImage = 'url("' + bgImgs[i - 1] + '")';
+          thumbnail[i - 1].classList.add("active");
+          thumbnail[i].classList.remove("active");
+          i--;
+        }
+      };
+    </script>
+  </body>
+</html>
