@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block body %}
+<a href="/"> HOME PAGE</a>
+<br><br>
+ <div class="row"><h3>Donation Form</h3></div>
+  <div class="row">
+    <div class="col-md-4">
+      {% with messages = get_flashed_messages()  %}
+      {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+        <div class="putCenter">
+            
+        </div>
+        <div class="card card-body">
+          <div class="form-group">
+            <input id="donor-fname" type="text" class="form-control" name="fname" placeholder="First Name">
+          </div>
+          <div class="form-group">
+            <input id="donor-lname" type="text" class="form-control" name="lname" placeholder="Last Name">
+          </div>
+          <!-- <div class="form-group">
+            <input type="text" class="form-control" name="btype" placeholder="Blood Type">
+          </div> -->
+          <div class="form-group">
+            <select id="donor-btype" class="form-control" name="btype">
+                <option value="O-">O -</option>
+                <option value="O+">O +</option>
+                <option value="A-">A -</option>
+                <option value="A+">A  +</option>
+                <option value="B-">B -</option>
+                <option value="B+">B +</option>
+                <option value="AB-">AB -</option>
+                <option value="AB+">AB +</option>
+            </select>
+          </div>
+          <div class="form-group">
+              <p>Date of Donation</p>
+            <input id="donation-date" type="date" class="form-control" name="date" placeholder="">
+          </div>
+          <div class="form-group">
+            <input id="donor-email" ype="email" class="form-control" name="email" placeholder="Email">
+          </div>
+          <button id="save">
+            Save 
+          </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../static/js/jQuery-2.1.4.min.js"></script>
+<script src="../static/js/script.js"></script>
+{% endblock %}
